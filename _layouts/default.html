@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{% if page.title %}{{ page.title }} | {{site.name}} {% else %} {{site.name}} {% endif %}</title>
+    {%if page.title == 'Front Page' or page.title == 'About' %}    
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}">
+    {%elsif page.description %}
+    <meta name="description" content="{{ page.description }}">    
+    <meta property="og:description" content="{{ page.description }}">
+    {%elsif page.content %}
+    <meta name="description" content="{{ page.content | strip_html | truncatewords: 20 }}">  
+    <meta property="og:description" content="{{ page.content | strip_html | truncatewords: 20 }}">
+    {% endif %}
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="{{site.name}}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{site.name}} {% else %} {{site.name}} {% endif %}">
+    <meta property="og:image" content="{{ site.baseurl }}/assets/icons/sedap-logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="108">
+    <meta property="og:image:height" content="108">
+    {% seo %}
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/icons/sedap-logo.png" type="image/png"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+    
+</head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.google_analytics}}');
+</script>
+
+<body class="padded-content">
+    <header class="ff-header margin-bottom-tiny">
+        <span class="site-name"><a class="text-large" href="{{ site.baseurl }}/">{{ site.name }}</a></span>
+        <label for="menu-toggle" class="links-toggle">
+            <img class="icon-small" src="{{ site.baseurl }}/assets/icons/icon-menu.svg">
+        </label>
+        <input type="checkbox" id="menu-toggle">
+        <nav class="header-links">
+            <ul>       
+                {% assign tags_list = site.tags %}  
+                  {% if tags_list.first[0] == null %}
+                    {% for tag in tags_list %} 
+                    <li class="nav-item">          
+                      <a href="{{ site.baseurl }}/{{ tag | downcase }}.html">{{ tag | capitalize }}</a>
+                    </li>
+                    {% endfor %}
+                  {% else %}
+                    {% for tag in tags_list %} 
+                    <li class="nav-item">          
+                      <a href="{{ site.baseurl }}/{{ tag[0] | downcase }}.html">{{ tag[0] | capitalize }}</a>
+                    </li>
+                    {% endfor %}
+                  {% endif %}
+                {% assign tags_list = nil %}
+            </ul>
+        </nav>
+    </header>
+    {{ content }}    
+    <footer>
+        <div class="text-tiny">&copy; <a href="{{ site.baseurl }}/about.html">{{site.name}}</a> &lt;/&gt;</div>
+    </footer>
+</body>
+</html>

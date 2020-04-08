@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+
+<h1>{{page.title}}</h1>
+<section id="article-list">
+  
+{% for post in site.posts %}
+  <article class="row">
+    <div class="article-title portion nine-elevenths">
+       <a class="article-link" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title|striptags }}">{{ post.title }}</a>
+    </div>
+    <span class="article-meta portion two-elevenths text-small hide-on-mobile">{{ post.date | date: "%b %d" }}</span>
+ </article>    
+{% endfor %}
+
+</section>
+
