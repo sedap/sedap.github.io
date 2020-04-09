@@ -7208,7 +7208,7 @@ footer {
     box-shadow: 0 4px 8px rgba(10, 10, 10, 0.1);
   }
   .header-links .nav-item {
-    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
   }
   .header-links .nav-item a {
     display: block;
