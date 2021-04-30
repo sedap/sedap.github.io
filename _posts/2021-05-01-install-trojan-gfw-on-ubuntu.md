@@ -23,6 +23,7 @@ apt update
 ```
 
 #install nginx web server
+
 ```bash
 apt install nginx
 ```
