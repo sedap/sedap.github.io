@@ -19,7 +19,7 @@ apt update
 ```
 
 #install nginx web server
-```
+```css
 apt install nginx
 ```
 
