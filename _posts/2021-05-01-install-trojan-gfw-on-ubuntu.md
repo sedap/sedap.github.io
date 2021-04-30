@@ -16,11 +16,12 @@ The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
 ```css
 sudo su
 apt update
-#apt upgrade
 ```
 
-#install nginx
+#install nginx web server
+```
 apt install nginx
+```
 
 #Configure nginx
 # edit /etc/nginx/sites-available/default
