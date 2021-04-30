@@ -13,13 +13,13 @@ Here I summarize a short and quick way to install [Trojan-GFW] (https://github.c
 The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
 
 
-```css
+```bash
 sudo su
 apt update
 ```
 
 #install nginx web server
-```css
+```bash
 apt install nginx
 ```
 
