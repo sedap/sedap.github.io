@@ -8,7 +8,7 @@ description: Cara cepat menginstall trojan-gfw di linux ubuntu
 ---
 
 
-Here I summarize a short and quick way to install [Trojan-GFW] (https://github.com/trojan-gfw/trojan) on Ubuntu Linux .
+Here I summarize a short and quick way to install [Trojan-GFW] (https://github.com/trojan-gfw/trojan) on Ubuntu Linux.
 
 Sistem operasi yang saya pergunakan Ubuntu 20.04 tetapi bisa juga untuk Debian.
 
