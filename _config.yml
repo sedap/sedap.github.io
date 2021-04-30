@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 name: sedap.!
 description: >- # this means to ignore newlines until "baseurl:"
- Tech and Music.
+ Abc and xyz.
 #baseurl: "/sedap-jekyll" # the subpath of your site, e.g. /blog
 baseurl: "" # the subpath of your site, e.g. /blog
 #baseurl: ""
@@ -32,6 +32,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - match_regex
 future: true
 google_analytics: "UA-124193981-1"
 
@@ -40,8 +41,6 @@ prose:
   rooturl: '_posts'
   siteurl: 'https://sedap.github.io'
   relativeLinks: 'https://sedap.github.io/links.jsonp'
-  #siteurl: 'http://pacul.github.io/meetmath/'
-  #relativeLinks: 'http://pacul.github.io/meetmath/links.jsonp'
   media: 'media'
   ignore:
     - index.md

@@ -10,30 +10,40 @@ layout: default
 <div class="article-content">
 	{{content}}
 </div>
+<br>
 
+
+tags :
+{% for tag in page.tags %}
+<kbd><a href="{{ site.baseurl }}/tags.html#{{ tag | slugify }}"> {{ tag }} </a></kbd>
+{% endfor %}
+
+in category 
+<kbd><a href="{{ site.baseurl }}/{{ page.categories[0] | downcase  }}.html"> {{ page.categories[0] | capitalize }} </a></kbd><br>
 </article>
-{% assign this_category = page.categories[0] %}
 
-{% if site.categories[this_category].size > 1 %}
+
+
+
 <aside class="related">
-<h2>Related :</h2>
-<ul>
+  <h2>Related :</h2>
+  <ul>
+{% for tag in page.tags %}
+	 {% for post in site.posts limit:5 %}
+		 {% if post.tags contains tag %}
+		 <article class="row">
+      <li class="article-title">
+        <a class="article-link" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title|striptags }}">{{ post.title }}</a>
+      </li>
+      </article>   
+		 {% endif %}
+	 {% endfor %}
+{% endfor %}
 
-    {% for category in site.categories  %}
-      {% for post in category[1]  %}
-          {% for category in post.categories %}
-          {% if category == this_category and post.title != page.title %}
-          <li class="article-title">
-            <a class="article-link" href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title|striptags }}">{{ post.title }}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-      {% endfor %}
-    {% endfor %}
-
-</ul>
+  </ul>
 </aside>
-{% endif %}
+
+
 
 
 

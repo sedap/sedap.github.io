@@ -17,7 +17,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="{{site.name}}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{site.name}} {% else %} {{site.name}} {% endif %}">
-    <meta property="og:image" content="{{ site.baseurl }}/assets/icons/sedap-logo.png">
+
+    {% capture post_first_image %}
+      {% assign hero_image = page.content | match_regex: '<img .*?src="([^"]+)"' %}
+      {% if hero_image == nil %}
+        {% assign hero_image = "/assets/icons/sedap-logo.png" | prepend: site_base %}
+      {% endif %}
+      {{ hero_image }}
+    {% endcapture %}
+    <meta property="og:image" content="{{ site.baseurl }}{{ post_first_image | strip }}">
+    
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="108">
     <meta property="og:image:height" content="108">
@@ -48,22 +57,12 @@ ga('send', 'pageview');
         </label>
         <input type="checkbox" id="menu-toggle">
         <nav class="header-links">
-            <ul>       
-                {% assign tags_list = site.tags %}  
-                  {% if tags_list.first[0] == null %}
-                    {% for tag in tags_list %} 
-                    <li class="nav-item">          
-                      <a href="{{ site.baseurl }}/{{ tag | downcase }}.html">{{ tag | capitalize }}</a>
-                    </li>
-                    {% endfor %}
-                  {% else %}
-                    {% for tag in tags_list %} 
-                    <li class="nav-item">          
-                      <a href="{{ site.baseurl }}/{{ tag[0] | downcase }}.html">{{ tag[0] | capitalize }}</a>
-                    </li>
-                    {% endfor %}
-                  {% endif %}
-                {% assign tags_list = nil %}
+            <ul>
+              {% for category in site.categories %}
+              <li class="nav-item">          
+                <a href="{{ site.baseurl }}/{{ category[0] | downcase }}.html">{{ category[0] | capitalize }}</a>
+              </li>
+              {% endfor %}
             </ul>
         </nav>
     </header>
