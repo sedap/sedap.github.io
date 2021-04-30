@@ -2,8 +2,12 @@
 layout: post
 published: false
 title: Whatsapp Error With Code 481
-categories: Net
-tags: Tech
+categories: OS
+tags:
+  - linux
+  - ubuntu
+  - trojan-gfw
+  - trojan. tunnel
 description: How to quickly install trojan-gfw on ubuntu linux
 ---
 
