@@ -7345,6 +7345,11 @@ code[class*=language-js] {
   color: #9779d8;
 }
 
+
+code[class*=language-bash] {
+  color: #ff0000;
+}
+
 code[class*=language-json] .token.string {
   color: #2fc6b7;
 }
