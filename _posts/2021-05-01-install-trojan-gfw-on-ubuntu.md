@@ -4,13 +4,13 @@ published: false
 title: Whatsapp Error With Code 481
 categories: Net
 tags: Tech
-description: Cara cepat menginstall trojan-gfw di linux ubuntu
+description: How to quickly install trojan-gfw on ubuntu linux
 ---
 
 
 Here I summarize a short and quick way to install [Trojan-GFW] (https://github.com/trojan-gfw/trojan) on Ubuntu Linux.
 
-Sistem operasi yang saya pergunakan Ubuntu 20.04 tetapi bisa juga untuk Debian.
+The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
 
 
 sudo su
