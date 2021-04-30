@@ -35,8 +35,8 @@ apt install nginx
 vi /etc/nginx/sites-available/default
 ```
 
-#replace _ in line "server_name _;"  with your domain name; e.g. hahahaha.com
-#copy default index.nginx-debian.html to index.html
+# replace _ in line "server_name _;"  with your domain name; e.g. hahahaha.com
+# copy default index.nginx-debian.html to index.html
 mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
 # run nginx server
 systemctl start nginx
