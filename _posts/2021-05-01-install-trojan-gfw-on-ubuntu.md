@@ -67,7 +67,7 @@ enter the server number that will be given the certificate
 then the certificates will be stored in _/etc/letsencrypt/live/hahahaha.com/_
 
 ```bash
-ls -la /etc/letsencrypt/live/books.meetmath.com/
+ls -la /etc/letsencrypt/live/hahahaha.com/
 ```
 
 fix the file permissions 
@@ -122,3 +122,4 @@ check service status, trojan on port 443 and nginx on port 80
 ```bash
 ss -tulpn
 ```
+.
