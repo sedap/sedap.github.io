@@ -1,0 +1,26 @@
+I"�<p>When you tried logging into your Gmail account, You were  greeted by a rather an encouraging message :</p>
+
+<p><strong>GMAIL temporary error (500)</strong></p>
+
+<p>We’re sorry, but your Gmail account is temporarily unavailable. We apologize for the inconvenience and suggest trying again in a few minutes. If the issue persists, please visit the Gmail Help Center. Try Again Sign Out.</p>
+
+<p>Some cases such an error seems to by triggered by:</p>
+
+<ol>
+  <li>Poor Internet Connection.</li>
+  <li>Browser Extension issues.</li>
+  <li>A conflict with software on your computer, browser1 cache2 that needs to be cleared, or a temporary problem on the Gmail server.</li>
+</ol>
+
+<p>Try these to fix the error :</p>
+
+<ul>
+  <li>If you have any browser extensions, try disabling them and restarting your browser.</li>
+  <li>Flush and clear your browser cache</li>
+  <li>If possible, check to see whether the problem also occurs when using a different network connection.</li>
+  <li>Internet security, firewall and anti-virus applications can prevent Gmail from working correctly, try disable them.</li>
+  <li>Refresh page.</li>
+</ul>
+
+<p>If the problem might be triggered by your Internet connection. Contact your local Internet provider and ask him if they are experiencing any kind of issues. Alternatively, if you are on a Wifi network, try to get closer to the Wifi antenna. If you are too far or inside a room with poor wifi, Gmail might not be able to send or receive emails</p>
+:ET

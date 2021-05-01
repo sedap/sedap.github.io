@@ -1,0 +1,16 @@
+I"�<p>Download unsuccessful error is seems to be a common error for the entire line of Android devices.</p>
+
+<p>There are steps you can take to fix the errors :</p>
+
+<ul>
+  <li>Open <strong>Settings</strong>.</li>
+  <li>Select <strong>Applications</strong>.</li>
+  <li>Select <strong>Playstore</strong> <em>(You may have to press <strong>Menu &gt; Filter &gt; All</strong> to see it)</em></li>
+  <li><em>Select <strong>Clear cache</strong>.</em></li>
+  <li><em>Back out of the screen and select <strong>Download Manager</strong>.</em></li>
+  <li><em>Select <strong>Clear data</strong></em></li>
+  <li><em>Also clear data for <strong>Google Apps</strong>, <strong>Google Talk</strong>, and <strong>Checkin Service</strong>. Some users are reporting they had to clear data for the <strong>Browser</strong> app as well.</em></li>
+</ul>
+
+<p><em>Now try again see if downloading from the Android Playstore works now.</em></p>
+:ET

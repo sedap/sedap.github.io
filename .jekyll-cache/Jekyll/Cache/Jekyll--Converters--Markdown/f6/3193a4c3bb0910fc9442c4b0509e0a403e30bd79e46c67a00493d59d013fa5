@@ -1,0 +1,16 @@
+I"y<p>The error appears when the installation of Microsoft Office does not complete successfully.</p>
+
+<p>Error 1935. An error occurred during the installation of assembly component {10CD20D2-733E-4174-9D02-2C6C26163DA5}</p>
+
+<p>The cause of the Microsoft Office 2010 Error 1935 can be narrowed down to the fact that when the Microsoft .NET Framework installation on the computer is damaged or missing. You can fix this error by repairing the .NET 2.0 Framework Installation or install a fresh copy of .NET 2.0 Framework Installation, and also clean out the registry.</p>
+
+<h2 id="how-to-fix-this-error-">How to fix this error ?</h2>
+
+<ul>
+  <li>Download and run <a href="http://download.microsoft.com/download/e/9/d/e9d80355-7ab4-45b8-80e8-983a48d5e1bd/msicuu2.exe">Windows Installer Cleanup Utility</a></li>
+  <li>Reinstall / Repair Microsot .Net Framework from <em>Control Panel -&gt; Add or Remove Program</em> or <em>Programs and Features</em> if you are using windows 7 or windows vista.</li>
+  <li>If reinstalling Microsot .Net Framework does not fix the problem, install new copy of Microsot .Net Framework.</li>
+  <li>Clean the temporary files, Click Start, in the Search box, type <strong>%Temp% </strong>and press Enter, delete all files and folders inside the Temp folder, if some cannot be deleted, skip them.</li>
+  <li>Restart your computer. Try to install Office again.</li>
+</ul>
+:ET

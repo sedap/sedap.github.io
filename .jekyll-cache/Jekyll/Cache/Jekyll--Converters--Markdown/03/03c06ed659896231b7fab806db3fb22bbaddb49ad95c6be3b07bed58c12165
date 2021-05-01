@@ -1,0 +1,53 @@
+I"�<p>On Mac OS X, when you connect to the Windows share, or when try to copy files to/from it, you see an alert box with a message similar to this one:</p>
+
+<p>The operation cannot be completed because one or more required items cannot be found. (Error code = -43).</p>
+
+<p>There are three causes for this:</p>
+
+<ul>
+  <li>Illegal characters.</li>
+  <li>A permissions issue</li>
+  <li>A non-existent share point.</li>
+</ul>
+
+<p><strong>Illegal characters</strong></p>
+
+<p>This occurs because Mac OS X allows you to use certain characters in file names that Microsoft Windows operating systems do not allow. The alert message text does not make this clear and may be regarded as erroneous. If you frequently share files with Windows computers, you may wish to follow naming protocols for the version of Windows that is in use.</p>
+
+<p>These are the characters not allowed:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>? [ ] / \ = + &lt; &gt; ; : ” ,</td>
+      <td>*</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Respectively, these are the question mark, left and right brackets, solidus (or “forward slash”), reverse solidus (or “backslash”), equals sign, plus sign, left and right angle brackets, semicolon, colon, quotation mark, comma, pipe, and asterisk.</p>
+
+<p>If the issue occurs when you are trying to open or copy a file, remove these characters from the file names.</p>
+
+<p>If this issue occurs when you are connecting to the SMB server, it may be because the share name contains the illegal character. Be sure to avoid the illegal characters in the names of shares, folders, or drives.</p>
+
+<p>When this is caused by illegal characters on the server, note that users of Windows operating systems will get the same -43 error message.</p>
+
+<p><strong>Permissions</strong></p>
+
+<p>Generally speaking, this could happen if connecting to any SMB server via a URL that contains the name of a share point for which the connecting user does not have adequate permissions, such as:</p>
+
+<p><strong>SMB://myNetbiosComputerName/restricted_share</strong></p>
+
+<p>You can avoid this issue by using the URL of the server only, without the share name, such as:</p>
+
+<p><strong>SMB://myNetbiosComputerName</strong></p>
+
+<p>After you connect, you will be prompted to choose from share points to which you have access.</p>
+
+<p>If the SMB server is a Mac OS X Server version 10.2 to 10.2.8, then any folders enclosing the SMB share point must have at least read-only or execute permissions set for the user or group that is connecting. You may use Workgroup Manager to set read-only access for the enclosing folder(s). Alternatively, advanced users may use the chmod command to set execute privileges for the enclosing folders.</p>
+
+<p><strong>Non-existent share point</strong></p>
+
+<p>You may get the -43 message if try to connect using a URL that contains the name of a share point that does not exist. As in the example above, you may simply omit the share point name from the server’s URL, then follow the prompts to select your share point.</p>
+:ET

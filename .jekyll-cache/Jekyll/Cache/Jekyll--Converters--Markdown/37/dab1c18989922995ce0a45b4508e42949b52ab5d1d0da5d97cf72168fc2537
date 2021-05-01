@@ -1,0 +1,20 @@
+I"�<p><img src="/media/gmail-error-not-connected.jpg" alt="gmail-error-not-connected.jpg" /></p>
+
+<p>A few moments ago, the Gmail for android application on my Mobile had an error, the error message was “<strong>Not Connected</strong>”, sometimes an error message also appeared “<strong>Something’s not right</strong>”
+I found that the solution to fixing this error was very easy.</p>
+
+<p>The error message basically states that your android is not connected to the internet.</p>
+
+<p>Following are the steps that must be done to fix the gmail error on the android:</p>
+
+<ol>
+  <li>Double check whether you are connected to the internet or not. check your WIFI connection, or your cellular data connection.</li>
+  <li>If it’s already connected, try to open the Google Chrome application and open the www.google.com page.</li>
+  <li>If the www.google.com page is open, it means that you are connected to the internet, and there are no problems with your internet network connection.</li>
+  <li>If the www.google.com page is not open, try checking whether the airplane mode on your android is active, if it is active, then you immediately disable it.</li>
+  <li>If the airplane mode is inactive, but you still cannot open the www.google.com page, it means there is a problem on your internet network, there can be a connection on your WIFI router with no internet connection. Try contacting the administrator on the internet network that you are using.</li>
+  <li>If the www.google.com page can be opened, but the Gmail android application still shows the same error message, try to uninstall the Gmail for Android application, then reinstall it.</li>
+</ol>
+
+<p>Such is the short step to try to fix the error message on the Gmail application on Android.</p>
+:ET

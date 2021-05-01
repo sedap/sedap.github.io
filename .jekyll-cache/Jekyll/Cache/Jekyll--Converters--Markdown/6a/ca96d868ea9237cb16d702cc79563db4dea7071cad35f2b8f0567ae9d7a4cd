@@ -1,0 +1,93 @@
+I"S<p>Here I summarize a short and quick way to install <a href="https://github.com/trojan-gfw/trojan">Trojan-GFW</a> on Ubuntu Linux.</p>
+
+<p>The operating system I use is Ubuntu 20.04 but it can also be used on Debian.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>su
+apt update
+</code></pre></div></div>
+
+<p>install nginx web server</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<p>Configure nginx
+edit file <em>/etc/nginx/sites-available/default</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/nginx/sites-available/default
+</code></pre></div></div>
+
+<p>replace _ in line <strong><em>server_name _;</em></strong>  with your domain name; e.g. <em>hahahaha.com</em></p>
+
+<p>copy default  file <em>index.nginx-debian.html</em> to <em>index.html</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /var/www/html/index.nginx-debian.html /var/www/html/index.html
+</code></pre></div></div>
+
+<p>run nginx server</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start nginx
+</code></pre></div></div>
+
+<p>check if nginx server is running well, use browser or curl</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl hahahaha.com
+</code></pre></div></div>
+
+<p>install and configure certbot</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>certbot python3-certbot-nginx
+</code></pre></div></div>
+
+<p>configure certybot</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>certbot certonly <span class="nt">--nginx</span>
+</code></pre></div></div>
+<p>enter email address and accept licence</p>
+
+<p>on part : Which names would you like to activate HTTPS for?</p>
+
+<p>enter the server number that will be given the certificate</p>
+
+<p>then the certificates will be stored in <em>/etc/letsencrypt/live/hahahaha.com/</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span> /etc/letsencrypt/live/books.meetmath.com/
+</code></pre></div></div>
+
+<p>fix the file permissions</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +rx /etc/letsencrypt/live
+<span class="nb">chmod</span> +rx /etc/letsencrypt/archive
+<span class="nb">chmod</span> <span class="nt">-R</span> +r /etc/letsencrypt/archive/hahahaha.com
+</code></pre></div></div>
+
+<p>install trojan</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>trojan
+</code></pre></div></div>
+
+<p>configure trojan
+edit file config.json</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/trojan/config.json
+</code></pre></div></div>
+
+<p>delete <em>password1</em></p>
+
+<p>replace <em>password2</em> with the desired password, for example <em>123</em></p>
+
+<p>edit the cert section, replace the contents with the certificate from certbot</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"cert"</span>: <span class="s2">"/path/to/certificate.crt"</span>,
+<span class="s2">"key"</span>: <span class="s2">"/path/to/private.key"</span>,
+</code></pre></div></div>
+<p>become</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"cert"</span>: <span class="s2">"/etc/letsencrypt/live/hahahaha.com/fullchain.pem"</span>,
+<span class="s2">"key"</span>: <span class="s2">"/etc/letsencrypt/live/hahahaha.com/privkey.pem"</span>,
+</code></pre></div></div>
+
+<p>enable trojan service</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nb">enable </span>trojan
+</code></pre></div></div>
+
+<p>run trojan service</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start trojan
+</code></pre></div></div>
+<p>check trojan service status see if there is an error.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl status trojan
+</code></pre></div></div>
+
+<p>check service status, trojan on port 443 and nginx on port 80</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ss <span class="nt">-tulpn</span>
+</code></pre></div></div>
+:ET

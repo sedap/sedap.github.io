@@ -1,0 +1,126 @@
+I"B<p>Here I summarize a short and quick way to install <a href="https://github.com/trojan-gfw/trojan">Trojan-GFW</a> on Ubuntu Linux.</p>
+
+<p>The operating system I use is Ubuntu 20.04 but it can also be used on Debian.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>su
+apt update
+</code></pre></div></div>
+
+<h2 id="install-nginx-web-server">install nginx web server</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<h1 id="configure-nginx">Configure nginx</h1>
+<h1 id="edit-etcnginxsites-availabledefault">edit /etc/nginx/sites-available/default</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/nginx/sites-available/default
+</code></pre></div></div>
+
+<h1 id="replace-_-in-line-server_name-_--with-your-domain-name-eg-hahahahacom">replace _ in line “server_name _;”  with your domain name; e.g. hahahaha.com</h1>
+<h1 id="copy-default-indexnginx-debianhtml-to-indexhtml">copy default index.nginx-debian.html to index.html</h1>
+<p>mv /var/www/html/index.nginx-debian.html /var/www/html/index.html</p>
+<h1 id="run-nginx-server">run nginx server</h1>
+<p>systemctl start nginx</p>
+
+<p>#check if nginx server is running well, use browser or curl
+curl hahahaha.com</p>
+
+<p>#install and configure certbot
+apt install certbot python3-certbot-nginx</p>
+
+<p>certbot certonly –nginx
+#enter email address and accept licence</p>
+
+<p>#on part : Which names would you like to activate HTTPS for?
+#masukkan nomor server yg anak di bei sertifikat
+#sertifkat tersimpan di /etc/letsencrypt/live/hahahaha.com/
+ls -la /etc/letsencrypt/live/books.meetmath.com/
+#perbaiki permission file nya
+chmod +rx /etc/letsencrypt/live
+chmod +rx /etc/letsencrypt/archive
+chmod -R +r /etc/letsencrypt/archive/hahahaha.com</p>
+
+<p>#install trojan
+apt install trojan</p>
+
+<p>#configure trojan
+#edit file vi config.json
+vi /etc/trojan/config.json
+#hapus password1, 
+ganti password2 dengan password untuk yang diinginkan misalnya 123</p>
+<h1 id="edit-bagian-cert-ganti-isinya-dengan-certifikat-dari-certbot">edit bagian cert, ganti isinya dengan certifikat dari certbot</h1>
+<p>#”cert”: “/path/to/certificate.crt”,
+#”key”: “/path/to/private.key”,
+menjadi
+“cert”: “/etc/letsencrypt/live/hahahaha.com/fullchain.pem”,
+“key”: “/etc/letsencrypt/live/hahahaha.com/privkey.pem”,</p>
+
+<p>#enable trojan service
+systemctl enable trojan</p>
+
+<p>#run trojan service
+systemctl start trojan</p>
+
+<p>#check trojan service status lihat apakah ada yang error.
+systemctl status trojan</p>
+
+<p>#cek status service, trojan di port 443 dan nginx di port 80
+ss -tulpn</p>
+
+<p>#install speed test cli
+curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
+sudo apt-get install speedtest</p>
+
+<p>If you find that your WhatsApp suddenly has an error with code 910, try the following steps to resolve it</p>
+
+<ol>
+  <li>Remove your Google account by going to your phone’s Settings. Then tap Users &amp; accounts.</li>
+  <li>Select your Google account and tap <strong><em>Remove Account &gt; Remove Account</em></strong>.</li>
+  <li>Restart your phone or turn it off and on.</li>
+  <li>Re-add your Google account by going to your phone’s Settings. Then tap <strong>Users &amp; accounts &gt; Add account &gt; Google._</strong></li>
+  <li>Log in to your Google account.</li>
+  <li>Clear Google Play Store’s cache by going to your phone’s Settings. Then tap <strong><em>Apps &amp; notifications &gt; App info &gt; Google Play Store &gt; Storage &gt; CLEAR CACHE</em></strong>.</li>
+  <li>Clear Google Play Store’s data by tapping <strong><em>CLEAR DATA &gt; OK</em></strong>.</li>
+  <li>Try downloading WhatsApp again.</li>
+</ol>
+
+<p>The steps above can also be used to resolve whatsapp errors with codes 413, 491, 492, 505, 907, 921, 927, 941 and DF-DLA-15</p>
+
+<h2 id="as-for-error-codes-101-498-and-919-here-are-the-steps-you-can-try-to-do">As for error codes 101, 498 and 919, here are the steps you can try to do</h2>
+
+<ol>
+  <li>Go to your phone’s Settings, then tap <strong><em>Apps &amp; notifications &gt; App info &gt; Google Play Store &gt; Storage &gt; CLEAR CACHE.</em></strong></li>
+  <li>Tap <strong><em>CLEAR DATA &gt; OK</em></strong>.</li>
+  <li>Restart your phone, then try installing WhatsApp again</li>
+</ol>
+
+<p>If you’re still unable to install WhatsApp, here are some tips on how to create free space on your phone:</p>
+<ul>
+  <li>Clear cache and data by going to your phone’s <strong><em>Settings &gt; Storage</em></strong>.</li>
+  <li>Move data and apps to your external SD card.</li>
+  <li>Delete apps you’re no longer using.</li>
+  <li>Look into these hidden WhatsApp folders below. Note you can only access these folders with a file manager:
+    <ol>
+      <li>The folder for photos is located in: <em>/WhatsApp/Media/WhatsApp Images/Sent</em>.</li>
+      <li>The folder for videos is located in: <em>/WhatsApp/Media/WhatsApp Video/Sent</em>.</li>
+      <li>The folder for voice messages is located in: <em>/WhatsApp/Media/WhatsApp Voice Notes</em>.</li>
+    </ol>
+
+    <p><strong>Note</strong>: If you delete your WhatsApp photos, videos or voice messages, you won’t be able to view or listen to them anymore.</p>
+  </li>
+</ul>
+
+<h2 id="for-error-codes-403-495-504-911-920-923-rpc-errors-invalid-package-file-installation-or-download-unsuccessful-errors">For error codes: 403, 495, 504, 911, 920, 923, RPC errors, invalid package file, installation or download unsuccessful errors</h2>
+
+<ol>
+  <li>Follow the instructions in the section “There’s insufficient space on the device” to make sure you have 2. enough space on your device.</li>
+  <li>Tap this link from our website to download WhatsApp as an APK file.</li>
+  <li>Tap <strong><em>DOWNLOAD NOW</em></strong>.</li>
+  <li>Open the APK file to initiate the installation.
+<strong>Note</strong>: When opening the APK file, you’ll need to tap <strong><em>SETTINGS &gt; Allow from this source</em></strong>.</li>
+</ol>
+
+<h2 id="for-error-this-item-isnt-available-in-your-country">For error This item isn’t available in your country</h2>
+<p>If you see a “<strong><em>Not available in your country</em></strong>” error, or if the Google Play Help Center troubleshooting tips don’t help, visit <a href="https://www.whatsapp.com/android" title="Download Whatsapp APK">this page</a> to download WhatsApp as an APK file and update the app. When opening the APK file, you’ll need to tap <strong><em>SETTINGS &gt; Allow</em></strong> from this source.</p>
+:ET

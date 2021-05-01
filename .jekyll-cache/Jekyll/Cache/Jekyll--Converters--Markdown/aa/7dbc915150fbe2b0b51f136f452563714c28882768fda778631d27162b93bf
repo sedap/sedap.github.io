@@ -1,0 +1,139 @@
+I"B<p>Here I summarize a short and quick way to install <a href="https://github.com/trojan-gfw/trojan">Trojan-GFW</a> on Ubuntu Linux.</p>
+
+<p>The operating system I use is Ubuntu 20.04 but it can also be used on Debian.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>su
+apt update
+</code></pre></div></div>
+
+<p>install nginx web server</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<p>Configure nginx
+edit file <em>/etc/nginx/sites-available/default</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/nginx/sites-available/default
+</code></pre></div></div>
+
+<p>replace <strong><em>** in line “**_server_name _;</em></strong>”  with your domain name; e.g. <em>hahahaha.com</em>
+copy default  file <em>index.nginx-debian.html</em> to <em>index.html</em>
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.html</p>
+
+<p>run nginx server</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start nginx
+</code></pre></div></div>
+
+<p>check if nginx server is running well, use browser or curl</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl hahahaha.com
+</code></pre></div></div>
+
+<p>install and configure certbot</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>certbot python3-certbot-nginx
+</code></pre></div></div>
+
+<p>configure certybot</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>certbot certonly <span class="nt">--nginx</span>
+</code></pre></div></div>
+<p>enter email address and accept licence</p>
+
+<p>on part : Which names would you like to activate HTTPS for?
+enter the server number that will be given the certificate
+then the certificates will be stored in <em>/etc/letsencrypt/live/hahahaha.com/</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span> /etc/letsencrypt/live/books.meetmath.com/
+</code></pre></div></div>
+
+<p>fix the file permissions</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +rx /etc/letsencrypt/live
+<span class="nb">chmod</span> +rx /etc/letsencrypt/archive
+<span class="nb">chmod</span> <span class="nt">-R</span> +r /etc/letsencrypt/archive/hahahaha.com
+</code></pre></div></div>
+
+<p>install trojan</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>trojan
+</code></pre></div></div>
+
+<p>configure trojan
+edit file config.json</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/trojan/config.json
+</code></pre></div></div>
+
+<p>delete <em>password1</em> 
+replace <em>password2</em> with the desired password, for example <em>123</em>
+edit the cert section, replace the contents with the certificate from certbot
+```bash
+“cert”: “/path/to/certificate.crt”,
+##”key”: “/path/to/private.key”,
+menjadi
+“cert”: “/etc/letsencrypt/live/hahahaha.com/fullchain.pem”,
+“key”: “/etc/letsencrypt/live/hahahaha.com/privkey.pem”,</p>
+
+<p>##enable trojan service
+systemctl enable trojan</p>
+
+<p>##run trojan service
+systemctl start trojan</p>
+
+<p>##check trojan service status lihat apakah ada yang error.
+systemctl status trojan</p>
+
+<p>##cek status service, trojan di port 443 dan nginx di port 80
+ss -tulpn</p>
+
+<p>##install speed test cli
+curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
+sudo apt-get install speedtest</p>
+
+<p>If you find that your WhatsApp suddenly has an error with code 910, try the following steps to resolve it</p>
+
+<ol>
+  <li>Remove your Google account by going to your phone’s Settings. Then tap Users &amp; accounts.</li>
+  <li>Select your Google account and tap <strong><em>Remove Account &gt; Remove Account</em></strong>.</li>
+  <li>Restart your phone or turn it off and on.</li>
+  <li>Re-add your Google account by going to your phone’s Settings. Then tap <strong>Users &amp; accounts &gt; Add account &gt; Google._</strong></li>
+  <li>Log in to your Google account.</li>
+  <li>Clear Google Play Store’s cache by going to your phone’s Settings. Then tap <strong><em>Apps &amp; notifications &gt; App info &gt; Google Play Store &gt; Storage &gt; CLEAR CACHE</em></strong>.</li>
+  <li>Clear Google Play Store’s data by tapping <strong><em>CLEAR DATA &gt; OK</em></strong>.</li>
+  <li>Try downloading WhatsApp again.</li>
+</ol>
+
+<p>The steps above can also be used to resolve whatsapp errors with codes 413, 491, 492, 505, 907, 921, 927, 941 and DF-DLA-15</p>
+
+<h4 id="as-for-error-codes-101-498-and-919-here-are-the-steps-you-can-try-to-do">As for error codes 101, 498 and 919, here are the steps you can try to do</h4>
+
+<ol>
+  <li>Go to your phone’s Settings, then tap <strong><em>Apps &amp; notifications &gt; App info &gt; Google Play Store &gt; Storage &gt; CLEAR CACHE.</em></strong></li>
+  <li>Tap <strong><em>CLEAR DATA &gt; OK</em></strong>.</li>
+  <li>Restart your phone, then try installing WhatsApp again</li>
+</ol>
+
+<p>If you’re still unable to install WhatsApp, here are some tips on how to create free space on your phone:</p>
+<ul>
+  <li>Clear cache and data by going to your phone’s <strong><em>Settings &gt; Storage</em></strong>.</li>
+  <li>Move data and apps to your external SD card.</li>
+  <li>Delete apps you’re no longer using.</li>
+  <li>Look into these hidden WhatsApp folders below. Note you can only access these folders with a file manager:
+    <ol>
+      <li>The folder for photos is located in: <em>/WhatsApp/Media/WhatsApp Images/Sent</em>.</li>
+      <li>The folder for videos is located in: <em>/WhatsApp/Media/WhatsApp Video/Sent</em>.</li>
+      <li>The folder for voice messages is located in: <em>/WhatsApp/Media/WhatsApp Voice Notes</em>.</li>
+    </ol>
+
+    <p><strong>Note</strong>: If you delete your WhatsApp photos, videos or voice messages, you won’t be able to view or listen to them anymore.</p>
+  </li>
+</ul>
+
+<h4 id="for-error-codes-403-495-504-911-920-923-rpc-errors-invalid-package-file-installation-or-download-unsuccessful-errors">For error codes: 403, 495, 504, 911, 920, 923, RPC errors, invalid package file, installation or download unsuccessful errors</h4>
+
+<ol>
+  <li>Follow the instructions in the section “There’s insufficient space on the device” to make sure you have 2. enough space on your device.</li>
+  <li>Tap this link from our website to download WhatsApp as an APK file.</li>
+  <li>Tap <strong><em>DOWNLOAD NOW</em></strong>.</li>
+  <li>Open the APK file to initiate the installation.
+<strong>Note</strong>: When opening the APK file, you’ll need to tap <strong><em>SETTINGS &gt; Allow from this source</em></strong>.</li>
+</ol>
+
+<h4 id="for-error-this-item-isnt-available-in-your-country">For error This item isn’t available in your country</h4>
+<p>If you see a “<strong><em>Not available in your country</em></strong>” error, or if the Google Play Help Center troubleshooting tips don’t help, visit <a href="https://www.whatsapp.com/android" title="Download Whatsapp APK">this page</a> to download WhatsApp as an APK file and update the app. When opening the APK file, you’ll need to tap <strong><em>SETTINGS &gt; Allow</em></strong> from this source.</p>
+:ET

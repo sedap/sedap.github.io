@@ -1,0 +1,14 @@
+I"]<p>For some reason when I try to upload an image to my blog I get an error message saying that WP can’t create a folder under the relevant directory (wp-content/uploads/2018/09) and it’s asking if the folder above it has write permissions. The parent folder indeed has write permissions. I tried creating the folder manually and it still shows the same error message.</p>
+
+<p>This error happens when PHP (WordPress) can’t write to the file. This is caused by not having write permissions or the username or group that PHP (WordPress) is running under doesn’t have permission to write to the file.</p>
+
+<p>755 permissions will allow WordPress write permissions when PHP is running as the username under most shared host plans.</p>
+
+<p>Some FTP programs will allow you to change the user and group assigned to the folders. You can also make this change using Cpanel’s file manager.</p>
+
+<p>The folders should have the same username as your Cpanel account.</p>
+
+<p>Some server environments require you to use 777 permissions for PHP to have write access. This is not secure in a shared hosting environment. You can change your permissions to 777 temporarily to see if that allows you to upload photos but <strong>MAKE SURE YOU CHANGE THEM BACK TO 755 WHEN YOUR DONE.</strong></p>
+
+<p>Your hosting provider should also be able to provide help in this situation.</p>
+:ET
