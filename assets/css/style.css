@@ -6410,19 +6410,19 @@ h1 {
 }
 
 h2 {
-  font-size: 1.771561em;
+  font-size: 1.471561em;
 }
 
 h3 {
-  font-size: 1.4641em;
+  font-size: 1.3641em;
 }
 
 h4 {
-  font-size: 1.331em;
+  font-size: 1.231em;
 }
 
 h5 {
-  font-size: 1.21em;
+  font-size: 1.11em;
 }
 
 h6 {
@@ -7291,7 +7291,7 @@ code,
 :not(pre) > code {
   font-family: "Space Mono", monospace;
   color: black;
-  font-size: 88%;
+  font-size: 100%;
   font-weight: normal;
   background-color: #fef6f0;
   white-space: pre;
@@ -7325,6 +7325,7 @@ code[class*=language-] {
   border-radius: 8px;
   -moz-tab-size: 4;
   tab-size: 4;
+  margin: -30px 0 20px 0;
 }
 
 code[class*=language-css],
@@ -7345,10 +7346,8 @@ code[class*=language-js] {
   color: #9779d8;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e52afc52f968d13ef525f9713e0a471ae2a8b2a
+.language-bash code, 
+.language-bash pre,
 code[class*=language-bash] {
   color: #ff0000;
 }
