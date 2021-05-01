@@ -1,30 +1,40 @@
 ---
 layout: post
 published: true
-title: Whatsapp Error With Code 481
+title: Install Trojan-GFW on Ubuntu Linux
 categories: Net
 tags: Tech
 description: >-
-  Cara cepat menginstall trojan-gfw di linux ubuntu
+  How to quickly install trojan-gfw on ubuntu or debian linux
 ---
 
-Berikut ini saya rangkumkan cara singkat dan cepat untuk menginstall [Trojan-GFW](https://github.com/trojan-gfw/trojan) di linux ubuntu.
-
-Sistem operasi yang saya pergunakan Ubuntu 20.04 tetapi bisa juga untuk Debian.
 
 
+Here I summarize a short and quick way to install [Trojan-GFW] (https://github.com/trojan-gfw/trojan) on Ubuntu Linux.
+
+The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
+
+
+```bash
 sudo su
 apt update
-#apt upgrade
+```
 
-#install nginx
+# install nginx web server
+
+```bash
 apt install nginx
+```
 
-#Configure nginx
+# Configure nginx
 # edit /etc/nginx/sites-available/default
+
+```bash
 vi /etc/nginx/sites-available/default
-#replace _ in line "server_name _;"  with your domain name; e.g. hahahaha.com
-#copy default index.nginx-debian.html to index.html
+```
+
+# replace _ in line "server_name _;"  with your domain name; e.g. hahahaha.com
+# copy default index.nginx-debian.html to index.html
 mv /var/www/html/index.nginx-debian.html /var/www/html/index.html
 # run nginx server
 systemctl start nginx
