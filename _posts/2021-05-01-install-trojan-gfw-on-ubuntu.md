@@ -1,5 +1,6 @@
 ---
 layout: post
+<<<<<<< HEAD
 published: true
 title: Install Trojan-GFW on Ubuntu Linux
 categories: Net
@@ -14,6 +15,24 @@ Here I summarize a short and quick way to install [Trojan-GFW] (https://github.c
 
 The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
 
+=======
+published: false
+title: Whatsapp Error With Code 481
+categories: OS
+tags:
+  - linux
+  - ubuntu
+  - trojan-gfw
+  - trojan. tunnel
+description: How to quickly install trojan-gfw on ubuntu linux
+---
+
+
+Here I summarize a short and quick way to install [Trojan-GFW] (https://github.com/trojan-gfw/trojan) on Ubuntu Linux.
+
+The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
+
+>>>>>>> 2e52afc52f968d13ef525f9713e0a471ae2a8b2a
 
 ```bash
 sudo su
