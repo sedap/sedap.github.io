@@ -17,7 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="{{site.name}}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{site.name}} {% else %} {{site.name}} {% endif %}">
-
+    
+    {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}/assets/img/posts/{{ page.image }}">
+    {% else %}
+     <meta property="og:image" content="{{ site.url }}/assets/icons/sedap-logo.png">
    
     
     <meta property="og:image:type" content="image/png">
