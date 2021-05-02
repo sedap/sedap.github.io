@@ -1,16 +1,14 @@
 ---
 layout: post
+date: '2021-05-01 07:24:31 +0700'
 published: true
 title: Install Trojan-GFW on Ubuntu Linux
 categories: Net
 tags: [trojan, trojan-gfw, tunnel, ubuntu, debian]
-description: >-
-  How to quickly install trojan-gfw on ubuntu or debian linux
+description: How to quickly install trojan-gfw on ubuntu or debian linux
 ---
 
-
-
-Here I summarize a short and quick way to install n
+Here I summarize a short and quick way to install [Trojan-GFW](https://github.com/trojan-gfw/trojan) on Ubuntu Linux.
 
 The operating system I use is Ubuntu 20.04 but it can also be used on Debian.
 
