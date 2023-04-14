@@ -29,7 +29,8 @@ Download all files in Release menu then copy these files to the GL-Inet AR300M-E
 
 **Install command :**
 
-```opkg install luci luci-compat luci-app-ssr-plus_180-10_all.ipk shadowsocksr-libev-alt_2.5.6-5_mips_24kc.ipk pdnsd-alt_1.2.9b-par-a8e46ccba7b0fa2230d6c42ab6dcd92926f6c21d_mips_24kc.ipk microsocks_1.0-1_mips_24kc.ipk dns2socks_2.1-1_mips_24kc.ipk shadowsocks-libev-ss-local_3.2.5-5_mips_24kc.ipk shadowsocksr-libev-ssr-local_2.5.6-5_mips_24kc.ipk shadowsocks-libev-ss-redir_3.2.5-5_mips_24kc.ipk simple-obfs_0.0.5-5_mips_24kc.ipk tcping_0.3-1_mips_24kc.ipk shadowsocks-libev-config_3.2.5-5_mips_24kc.ipk trojan_1.16.0-1_mips_24kc.ipk
+```bash
+opkg install luci luci-compat luci-app-ssr-plus_180-10_all.ipk shadowsocksr-libev-alt_2.5.6-5_mips_24kc.ipk pdnsd-alt_1.2.9b-par-a8e46ccba7b0fa2230d6c42ab6dcd92926f6c21d_mips_24kc.ipk microsocks_1.0-1_mips_24kc.ipk dns2socks_2.1-1_mips_24kc.ipk shadowsocks-libev-ss-local_3.2.5-5_mips_24kc.ipk shadowsocksr-libev-ssr-local_2.5.6-5_mips_24kc.ipk shadowsocks-libev-ss-redir_3.2.5-5_mips_24kc.ipk simple-obfs_0.0.5-5_mips_24kc.ipk tcping_0.3-1_mips_24kc.ipk shadowsocks-libev-config_3.2.5-5_mips_24kc.ipk trojan_1.16.0-1_mips_24kc.ipk
 ```
 
 ## All Files in 7z format:
