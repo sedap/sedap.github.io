@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 date: '2023-05-19 08:39:31 +0700'
 categories: Net
