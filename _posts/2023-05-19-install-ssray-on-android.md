@@ -10,6 +10,7 @@ tags:
   - SSRAY
   - Android Trojan-gfw
 description: Install SSRAY on Android
+title: Install SSRAY on Android
 ---
 To use Trojan-GFW on Android, you can use the SSRRAY application. This application is not available on the Google Play Store, but you can download it from the GitHub page, specifically from the following repository: https://github.com/xxf098/shadowsocksr-v2ray-trojan-android.
 
